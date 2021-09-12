@@ -1,1 +1,1 @@
-worker: languagenutdiscord.py
+worker: python languagenutdiscord.py
