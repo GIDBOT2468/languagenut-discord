@@ -88,7 +88,7 @@ async def on_message(message):
         if len(message_text) == 3:
             number = str(message_text[2])
         else:
-            number = 12000
+            number = 110
 
         url = 'https://api.languagenut.com:443/gameDataController/addGameScore?cacheBreaker=1621543527060'
         print("number = " + str(number))
@@ -129,6 +129,7 @@ async def on_message(message):
                 print(str(score) + "/" + str(points) + " points  - " + str(percentage) + "%", end="\r")
             if run == False:
                 break
+            number = int(number)
             number += 1
             if number == 611:
                 number = 1000
