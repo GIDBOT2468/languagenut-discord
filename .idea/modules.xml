@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/.idea/Gideon.iml" filepath="$USER_HOME$/.idea/Gideon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/languagenut-discord.iml" filepath="$PROJECT_DIR$/.idea/languagenut-discord.iml" />
+    </modules>
+  </component>
+</project>

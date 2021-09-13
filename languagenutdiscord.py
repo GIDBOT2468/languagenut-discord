@@ -35,6 +35,7 @@ async def on_message(message):
         embed.add_field(name='1.', value='Store your login details by typing: **!login** ***yourUsername yourPassword***, \n(example, **!username GideonD Password123**, you only need to do this once, you can do it again to update login details)', inline=False)
         embed.add_field(name='2.', value='To start the hack type: **!languagenuthack** ***numberOfPointsYouWant***, \n(example, **!languagenuthack 1000000**)', inline=False)
         embed.add_field(name='3.', value='Wait for hack to complete.', inline=False)
+        embed.add_field(name='Numbers', value='110 - 610, 1000 - 2100, 7000 - 7900, 10000 - 14000, 16000 - 20500, 41000 - 41100, 43000 - 47500, 5600 - 63000, 65000 - 66000', inline=False)
 
         await message.channel.send(content=None, embed=embed)
 
@@ -105,6 +106,7 @@ async def on_message(message):
             'Connection': 'close'
         }
 
+
         run = True
         percent_message = await message.channel.send(str(score) + "/" + str(points) + " points  - 0%")
         while True:
@@ -113,11 +115,6 @@ async def on_message(message):
                     run = False
                     break
                 x = requests.post(url, data=body, headers=headers)
-                if 'Fatal' in x.text:
-                    print("Invalid Number: " + str(number) + ", try entering another number between 1000 and 40000")
-                    await message.channel.send("Invalid Number: " + str(number) + ", try entering another number between 1000 and 40000")
-                    run = False
-                    break
                 if 'Error' in x.text:
                     print("Invalid Token or login details")
                     await message.channel.send("Invalid Token or login details")
@@ -133,6 +130,24 @@ async def on_message(message):
             if run == False:
                 break
             number += 1
+            if number == 611:
+                number = 1000
+            if number == 2101:
+                number = 7000
+            if number == 7901:
+                number = 10000
+            if number == 14001:
+                number = 16000
+            if number == 20501:
+                number = 41000
+            if number == 41100:
+                number = 43000
+            if number == 47500:
+                number = 56000
+            if number == 63000:
+                number = 65000
+            if number == 66000:
+                number = 110
             body = 'moduleUid=' + str(number) + '&gameUid=10&gameType=reading&isTest=true&toietf=es&fromietf=en-GB&score=3800&correctVocabs=26097%2C27666%2C26090%2C26091%2C26093%2C27662%2C26094%2C26095%2C26089%2C26096%2C27666%2C26090%2C26091%2C26093%2C27662%2C26094%2C26095%2C26089%2C26096&incorrectVocabs=&isSentence=false&isVerb=false&grammarCatalogUid=12116&isGrammar=false&isExam=false&timeStamp=39250&vocabNumber=19&languagenutTimeMarker=1621543527060&lastLanguagenutTimeMarker=1621543527060&apiVersion=8&token=' + str(token)
 
         await message.channel.send("Finished hack")
